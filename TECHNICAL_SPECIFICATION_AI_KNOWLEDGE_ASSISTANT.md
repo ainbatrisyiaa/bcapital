@@ -125,34 +125,70 @@ Using OpenAI API (Paid/Enterprise Tier) ensures:
 
 ## 6. Implementation Roadmap
 
-### Phase 1 — Proof of Concept (Week 1–2)
+### Phase 1 — Proof of Concept (Month 1)
 
-- Setup Python backend
+**Activities**
+- Setup Python backend environment
 - Scrape data from 1 project URL
+- Implement basic RAG flow
 - Test Q&A via terminal (no UI)
 
+**Outcome**  
+A working prototype that can answer questions from one project source.
+
 ---
 
-### Phase 2 — Backend Development (Week 3–4)
+### Phase 2 — Backend Development (Month 2)
 
+**Activities**
 - Setup Vector Database (ChromaDB)
 - Build ingestion pipeline (Website → Vector DB)
-- Setup FastAPI endpoints
+- Structure project knowledge base (GitHub Markdown format)
+- Setup FastAPI endpoints (`/chat`, `/ingest`)
+- Connect AI model with search system
+
+**Outcome**  
+A functional backend API capable of answering questions from multiple projects.
 
 ---
 
-### Phase 3 — Frontend Development (Week 5–6)
+### Phase 3 — Frontend Development (Month 3)
 
-- Setup React & Tailwind
+**Activities**
+- Setup React & Tailwind chat interface
 - Integrate API with chat UI
-- Implement chat history feature
+- Implement chat session and basic history
+- Deploy to staging environment
+
+**Outcome**  
+Chatbot accessible on staging website for internal use.
 
 ---
 
-### Phase 4 — Testing & Deployment (Week 7–8)
+### Phase 4 — Internal Testing & Refinement (Month 4)
 
+**Activities**
 - User Acceptance Test (UAT) with selected agents
-- Deploy to internal server or cloud (AWS / DigitalOcean)
+- Improve knowledge base structure and content
+- Refine prompts and response quality
+- Fix edge cases and accuracy issues
+
+**Outcome**  
+Stable chatbot ready for controlled internal usage.
+
+---
+
+### Phase 5 — Deployment, Monitoring & Optimization (Month 5–6)
+
+**Activities**
+- Deploy to production server (AWS / DigitalOcean)
+- Embed chatbot into live website
+- Monitor real user questions and logs
+- Continuous improvement of knowledge base and responses
+- Performance tuning and stabilization
+
+**Outcome**  
+Fully stable AI chatbot ready for company-wide or public usage.
 
 ---
 
