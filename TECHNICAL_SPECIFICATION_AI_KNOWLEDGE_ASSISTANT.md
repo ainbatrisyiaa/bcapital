@@ -1,15 +1,10 @@
 # Technical Specification Document: AI Knowledge Assistant
 
-**Version:** 1.0  
-**Date:** [Insert Date]  
-**Prepared By:** [Your Name]  
-**Status:** Draft Proposal
-
 ---
 
 ## 1. Executive Summary
 
-This project aims to develop a dedicated **AI Chat Agent** for internal use at **[Company Name]**.
+This project aims to develop a dedicated **AI Chat Agent** for internal use at **Bersatu Capital**.
 
 The system will act as an intelligent assistant for real estate agents and staff to quickly retrieve accurate information about projects, property listings, and company documentation through a chat interface.
 
