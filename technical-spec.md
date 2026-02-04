@@ -46,12 +46,15 @@ Ensure every AI answer is supported by official company data, not fabricated con
 
 | Component | Technology | Description |
 |----------|------------|-------------|
-| Frontend | React.js (Vite) + Tailwind CSS | Fast, responsive UI |
-| Backend | Python (FastAPI) | High performance, AI-ready |
-| LLM Engine | OpenAI API (GPT-4o) | Language intelligence |
-| Orchestrator | LangChain | Manage data flow between DB and LLM |
-| Vector DB | ChromaDB / Pinecone | Semantic search storage |
-| App DB | PostgreSQL | Store users, sessions, chat history |
+| Frontend | React (Vite) + Tailwind CSS | Chat UI with streaming + citations |
+| Backend | Python (FastAPI) | Chat API, retrieval orchestration, safety |
+| LLM Engine | OpenAI API | Response generation + question rewriting |
+| Vector DB | **Postgres + PGVector** | Embeddings + metadata filtering in one DB |
+| App DB | PostgreSQL | Sessions, chat logs (non-sensitive), feedback, document registry |
+| Optional Cache | Redis (optional) | Faster session memory if needed |
+
+**LangChain**: Not required for MVP.  
+We implement RAG explicitly for better control, safety, and debuggability.
 
 ---
 
