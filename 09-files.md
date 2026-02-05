@@ -23,7 +23,7 @@ repo-root/
 └─ data/
    ├─ pdfs/
    └─ urls/
-
+```
 ---
 
 ## Phase 0 — Setup & Documentation
