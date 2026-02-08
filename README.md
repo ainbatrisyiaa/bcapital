@@ -1,75 +1,84 @@
-# AI Public Chat Agent — Real Estate Knowledge Assistant
+# AI Internal Chat Agent — Real Estate Knowledge Assistant
 
-This project implements a ChatGPT-like AI assistant for the company website that answers public questions using **only approved PDFs and allowlisted website pages**.
+This project implements an **internal ChatGPT-like AI assistant** for a real estate company.
 
-The assistant is bilingual (Bahasa Melayu & English), provides **source citations** for every answer, and supports **follow-up questions** using session-based conversation memory — while remaining strictly grounded in documents (no hallucination).
+The assistant is accessible **only to registered Agents and Admins** via login and answers questions **strictly based on approved and ingested company website content**.
+
+The system is designed to be secure, reliable, and fully grounded in company-approved information, with **no hallucination** and **no reliance on external knowledge**.
 
 ---
 
 ## 🚀 Key Features
 
 - Chat interface similar to ChatGPT
-- Answers strictly from approved sources (PDF + website)
-- Source citations (PDF page / URL + snippet)
-- Supports BM and English automatically
-- Session memory for follow-up questions (no login required)
-- Safe for public usage (no internal/sensitive data exposure)
-- Easy document ingestion and re-indexing
+- Login required (Agent & Admin roles)
+- Answers strictly from ingested website content
+- Supports Bahasa Melayu and English automatically
+- Session-based conversation memory for follow-up questions
+- Streaming responses for better user experience
+- Role-based access control (RBAC)
+- Safe for internal company usage
+- Easy content ingestion and re-indexing
 
 ---
 
-## 🧠 Core Concept: RAG (Retrieval-Augmented Generation)
+## 🧠 Core Concept: Grounded AI with Controlled Knowledge
 
-The AI does not rely on pre-trained knowledge about the company.
+The AI does **not** rely on its pre-trained knowledge about the company.
 
 Instead, it:
-1. Retrieves relevant chunks from documents
-2. Builds context from those chunks
-3. Generates answers strictly from that context
-4. Shows sources for transparency
+1. Retrieves relevant information from ingested website content
+2. Builds context strictly from retrieved content
+3. Generates answers only from that context
+4. Refuses to answer when information is not available
 
-If information is not found, the assistant will say so.
+This approach ensures accurate, consistent, and policy-compliant responses.
 
 ---
 
 ## 🏗️ Architecture Overview
 
-**Frontend**
-- React (Vite) + Tailwind
-- Streaming chat UI
-- Markdown rendering + Sources panel
+### Frontend
+- Next.js (App Router)
+- Tailwind CSS
+- Secure authentication (Agent / Admin)
+- Streaming chat interface
+- Markdown-rendered responses
 
-**Backend**
+### Backend
 - FastAPI (Python)
-- Custom RAG orchestration (no LangChain required)
-- Session memory + question rewriting for follow-ups
+- Secure API endpoints with token validation
+- Custom retrieval and answer orchestration
+- Session memory and follow-up question rewriting
 
-**Database**
-- PostgreSQL (sessions, logs, feedback, document registry)
-- PGVector (embeddings + metadata filtering)
-
----
-
-## 🔄 How It Works (High Level Flow)
-
-1. PDFs and approved web pages are ingested
-2. Text is cleaned, chunked, embedded, and stored in PGVector
-3. User sends a message with a `session_id`
-4. Backend rewrites follow-up questions into standalone queries
-5. Relevant chunks are retrieved
-6. LLM answers using only retrieved content
-7. Answer and sources are streamed to the UI
+### Data Layer
+- PostgreSQL (users, roles, sessions, logs, feedback)
+- Vector database (pgvector) for indexed website content
 
 ---
 
-## 🔐 Safety by Design
+## 🔄 How It Works (High-Level Flow)
 
-- Only approved public documents are ingested
-- Website crawling uses strict allowlist or approved URL list
-- Prompt injection defenses
-- Refusal when information is not found in sources
-- No storage of sensitive user data
-- “Clear chat” option for privacy
+1. Approved website content is ingested and indexed
+2. Content is cleaned, chunked, embedded, and stored
+3. A logged-in user sends a message through the chat interface
+4. The backend rewrites follow-up questions into standalone queries
+5. Relevant content is retrieved based on the user role
+6. The AI generates an answer strictly from retrieved content
+7. The response is streamed back to the user interface
+
+If no relevant content is found, the assistant clearly states that the information is not available.
+
+---
+
+## 🔐 Security and Access Control
+
+- Login is mandatory for all users
+- Role-based access control (Agent vs Admin)
+- Only approved website content is ingested
+- Prompt injection defenses enforced at the backend
+- Minimal storage of user data
+- Session memory can be cleared by the user
 
 ---
 
@@ -87,14 +96,20 @@ Start with: `00-getting-started.md`
 
 ## 🧭 Development Philosophy
 
-**Documentation → Architecture → API Spec → Implementation → Testing → Deployment**
+**Documentation → Architecture → API Specification → Implementation → Testing → Deployment**
 
-No coding should start before Tier 2 documents are completed.
+No implementation should begin before Tier 2 documentation is finalized.
 
 ---
 
 ## 🌱 Future Expansion
 
-- WhatsApp chatbot integration
-- Internal staff assistant with login + internal knowledge base
-- CRM / lead capture integration
+- Analytics dashboard for Admins
+  - Most frequently asked questions
+  - Question trends over time
+  - Most active users (by role)
+  - Unanswered or low-confidence questions
+  - Feedback analysis (👍 / 👎)
+- Content gap detection (identify missing or outdated website content)
+- Performance monitoring (response time, retrieval success rate)
+- Advanced role-based usage insights
