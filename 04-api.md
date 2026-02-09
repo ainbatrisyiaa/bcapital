@@ -32,6 +32,7 @@ Authenticate a user and start a session.
   "email": "user@company.com",
   "password": "********"
 }
+```
 
 **Response**
 ```json
