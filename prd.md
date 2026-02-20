@@ -29,7 +29,7 @@ Provide registered real estate platform users with a single, intelligent interfa
 ## 3. User Personas & Access
 
 ### 3.1 Target Users
-- **Registered platform users** (buyers, renters, investors, agents, or internal staff) who have completed sign-up and login.
+- **Registered platform users** (agents and internal staff) who have completed sign-up and login.
 - **Anonymous or unauthenticated visitors** must not have access to the chatbot.
 
 ### 3.2 Access Control Requirements
