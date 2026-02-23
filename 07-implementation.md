@@ -55,7 +55,7 @@ Each phase builds on the previous one and must be completed in order to ensure s
 - Prepare data for semantic retrieval
 
 ### Scope
-- URL allowlist configuration
+- URL allowlist configuration (protected URLs; username/password required)
 - Website content fetching
 - HTML cleaning and normalization
 - Text chunking
