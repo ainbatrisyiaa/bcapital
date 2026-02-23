@@ -90,7 +90,7 @@ If no relevant content is found, the assistant clearly states that the informati
 | Tier 2 | Core system design and specifications |
 | Tier 3 | Deployment, security, and operations |
 
-Start with: `00-getting-started.md`
+Start with: `00-blueprint.md`
 
 ---
 
